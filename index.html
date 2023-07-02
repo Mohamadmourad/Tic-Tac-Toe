@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tik-Tac-Toe</title>
+</head>
+<body>
+   <header>
+    Tik-Tak-Toe
+   </header> 
+   <main>
+     <div class="container">
+        <div class="parent">
+            <div class="a3 divs" id="a3"></div>
+            <div class="b3 divs" id="b3"></div>
+            <div class="c3 divs" id="c3"></div>
+            <div class="a2 divs" id="a2"></div>
+            <div class="b2 divs" id="b2"></div>
+            <div class="c2 divs" id="c2"></div>
+            <div class="a1 divs" id="a1"></div>
+            <div class="b1 divs" id="b1"></div>
+            <div class="c1 divs" id="c1"></div>
+            </div>
+     </div>
+   </main>
+   <div class="result" id="resultBox">
+    <p id="result">your not seeing this anyway</p>
+    <button id="again">Try again </button>
+  </div>
+   <script src="variables.js"></script>
+   <script>
+   let turn = "X";
+   let turnCounter = 0;
+   let moveCounter = 0;
+
+    for(let i = 0; i < all.length; i++) {
+  all[i].addEventListener('click', function(){
+  if(turnCounter%2 == 0)//to determan who play
+  turn = "X";
+  else
+  turn = "O";
+  all[i].innerHTML=turn;
+  turnCounter++;
+  moveCounter++;
+  /*put the symbole in our comparision array*/
+  switch(i){
+    case 0: (turnCounter%2 == 0) ? comparisiontArray[0][0]=2 :comparisiontArray[0][0]=1; break;
+    case 1: (turnCounter%2 == 0) ? comparisiontArray[0][1]=2 :comparisiontArray[0][1]=1; break;
+    case 2: (turnCounter%2 == 0) ? comparisiontArray[0][2]=2 :comparisiontArray[0][2]=1; break;
+    case 3: (turnCounter%2 == 0) ? comparisiontArray[1][0]=2 :comparisiontArray[1][0]=1; break;
+    case 4: (turnCounter%2 == 0) ? comparisiontArray[1][1]=2 :comparisiontArray[1][1]=1; break;
+    case 5: (turnCounter%2 == 0) ? comparisiontArray[1][2]=2 :comparisiontArray[1][2]=1; break;
+    case 6: (turnCounter%2 == 0) ? comparisiontArray[2][0]=2 :comparisiontArray[2][0]=1; break;
+    case 7: (turnCounter%2 == 0) ? comparisiontArray[2][1]=2 :comparisiontArray[2][1]=1; break;
+    case 8: (turnCounter%2 == 0) ? comparisiontArray[2][2]=2 :comparisiontArray[2][2]=1; break;
+  }
+  /*check when you finish the game*/
+  let isVictory = true;//if true X won
+  let endGameCounter = 0; 
+  if(moveCounter >4){
+   if(comparisiontArray[0][0]==comparisiontArray[0][1] && comparisiontArray[0][1] == comparisiontArray[0][2]){
+     all[0].style.backgroundColor = "green";
+     all[1].style.backgroundColor = "green";
+     all[2].style.backgroundColor = "green";
+     (comparisiontArray[0][0]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[0][0]==comparisiontArray[1][0] && comparisiontArray[1][0] == comparisiontArray[2][0]){
+     all[0].style.backgroundColor = "green";
+     all[3].style.backgroundColor = "green";
+     all[6].style.backgroundColor = "green";
+     (comparisiontArray[0][0]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[2][0]==comparisiontArray[2][1] && comparisiontArray[2][1] == comparisiontArray[2][2]){
+     all[6].style.backgroundColor = "green";
+     all[7].style.backgroundColor = "green";
+     all[8].style.backgroundColor = "green";
+     (comparisiontArray[2][0]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[0][2]==comparisiontArray[1][2] && comparisiontArray[1][2] == comparisiontArray[2][2]){
+     all[2].style.backgroundColor = "green";
+     all[5].style.backgroundColor = "green";
+     all[8].style.backgroundColor = "green";
+     (comparisiontArray[0][2]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[0][0]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[2][2]){
+     all[0].style.backgroundColor = "green";
+     all[4].style.backgroundColor = "green";
+     all[8].style.backgroundColor = "green";
+     (comparisiontArray[0][0]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[0][2]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[2][0]){
+     all[2].style.backgroundColor = "green";
+     all[4].style.backgroundColor = "green";
+     all[6].style.backgroundColor = "green";
+     (comparisiontArray[0][2]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[0][1]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[2][1]){
+     all[1].style.backgroundColor = "green";
+     all[4].style.backgroundColor = "green";
+     all[7].style.backgroundColor = "green";
+     (comparisiontArray[0][1]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+   if(comparisiontArray[1][0]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[1][2]){
+     all[3].style.backgroundColor = "green";
+     all[4].style.backgroundColor = "green";
+     all[5].style.backgroundColor = "green";
+     (comparisiontArray[1][0]==1) ? isVictory = true :isVictory = false;
+     endGameCounter++;
+   }
+  }
+  /*annouce winner*/
+  if(isVictory && endGameCounter>0){
+    document.getElementById('resultBox').style.display = "flex";
+    result.innerHTML = "The winner is X";
+  }
+  else if(!isVictory && endGameCounter>0){
+    resultBox.style.display = "flex";
+    result.innerHTML = "The winner is O";
+  }
+  if(moveCounter == 9 && endGameCounter==0){
+    resultBox.style.display = "flex";
+    result.innerHTML = "its a draw";
+  }
+}, false);
+}
+        
+   </script>
+</body>
+</html>
