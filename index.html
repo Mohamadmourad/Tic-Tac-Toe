@@ -34,9 +34,12 @@
    let turn = "X";
    let turnCounter = 0;
    let moveCounter = 0;
+   let endGameCounter = 0; 
 
     for(let i = 0; i < all.length; i++) {
   all[i].addEventListener('click', function(){
+    if(!all[i].innerHTML){
+      if(endGameCounter == 0){
   if(turnCounter%2 == 0)//to determan who play
   turn = "X";
   else
@@ -58,7 +61,6 @@
   }
   /*check when you finish the game*/
   let isVictory = true;//if true X won
-  let endGameCounter = 0; 
   if(moveCounter >4){
    if(comparisiontArray[0][0]==comparisiontArray[0][1] && comparisiontArray[0][1] == comparisiontArray[0][2]){
      all[0].style.backgroundColor = "green";
@@ -130,6 +132,8 @@
     resultBox.style.display = "flex";
     result.innerHTML = "its a draw";
   }
+}
+    }
 }, false);
 }
         
