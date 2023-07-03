@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/55a4ab9ea3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Tik-Tac-Toe</title>
 </head>
@@ -28,6 +29,9 @@
    <div class="result" id="resultBox">
     <p id="result">your not seeing this anyway</p>
     <button id="again">Try again </button>
+  </div>
+  <div class="credit">
+    Designed by: <p> Mohamad Mourad</p>
   </div>
    <script src="variables.js"></script>
    <script>
@@ -63,58 +67,58 @@
   let isVictory = true;//if true X won
   if(moveCounter >4){
    if(comparisiontArray[0][0]==comparisiontArray[0][1] && comparisiontArray[0][1] == comparisiontArray[0][2]){
-     all[0].style.backgroundColor = "green";
-     all[1].style.backgroundColor = "green";
-     all[2].style.backgroundColor = "green";
+     all[0].style.backgroundColor = "#8BE78B";
+     all[1].style.backgroundColor = "#8BE78B";
+     all[2].style.backgroundColor = "#8BE78B";
      (comparisiontArray[0][0]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[0][0]==comparisiontArray[1][0] && comparisiontArray[1][0] == comparisiontArray[2][0]){
-     all[0].style.backgroundColor = "green";
-     all[3].style.backgroundColor = "green";
-     all[6].style.backgroundColor = "green";
+     all[0].style.backgroundColor = "#8BE78B";
+     all[3].style.backgroundColor = "#8BE78B";
+     all[6].style.backgroundColor = "#8BE78B";
      (comparisiontArray[0][0]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[2][0]==comparisiontArray[2][1] && comparisiontArray[2][1] == comparisiontArray[2][2]){
-     all[6].style.backgroundColor = "green";
-     all[7].style.backgroundColor = "green";
-     all[8].style.backgroundColor = "green";
+     all[6].style.backgroundColor = "#8BE78B";
+     all[7].style.backgroundColor = "#8BE78B";
+     all[8].style.backgroundColor = "#8BE78B";
      (comparisiontArray[2][0]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[0][2]==comparisiontArray[1][2] && comparisiontArray[1][2] == comparisiontArray[2][2]){
-     all[2].style.backgroundColor = "green";
-     all[5].style.backgroundColor = "green";
-     all[8].style.backgroundColor = "green";
+     all[2].style.backgroundColor = "#8BE78B";
+     all[5].style.backgroundColor = "#8BE78B";
+     all[8].style.backgroundColor = "#8BE78B";
      (comparisiontArray[0][2]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[0][0]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[2][2]){
-     all[0].style.backgroundColor = "green";
-     all[4].style.backgroundColor = "green";
-     all[8].style.backgroundColor = "green";
+     all[0].style.backgroundColor = "#8BE78B";
+     all[4].style.backgroundColor = "#8BE78B";
+     all[8].style.backgroundColor = "#8BE78B";
      (comparisiontArray[0][0]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[0][2]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[2][0]){
-     all[2].style.backgroundColor = "green";
-     all[4].style.backgroundColor = "green";
-     all[6].style.backgroundColor = "green";
+     all[2].style.backgroundColor = "#8BE78B";
+     all[4].style.backgroundColor = "#8BE78B";
+     all[6].style.backgroundColor = "#8BE78B";
      (comparisiontArray[0][2]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[0][1]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[2][1]){
-     all[1].style.backgroundColor = "green";
-     all[4].style.backgroundColor = "green";
-     all[7].style.backgroundColor = "green";
+     all[1].style.backgroundColor = "#8BE78B";
+     all[4].style.backgroundColor = "#8BE78B";
+     all[7].style.backgroundColor = "#8BE78B";
      (comparisiontArray[0][1]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
    if(comparisiontArray[1][0]==comparisiontArray[1][1] && comparisiontArray[1][1] == comparisiontArray[1][2]){
-     all[3].style.backgroundColor = "green";
-     all[4].style.backgroundColor = "green";
-     all[5].style.backgroundColor = "green";
+     all[3].style.backgroundColor = "#8BE78B";
+     all[4].style.backgroundColor = "#8BE78B";
+     all[5].style.backgroundColor = "#8BE78B";
      (comparisiontArray[1][0]==1) ? isVictory = true :isVictory = false;
      endGameCounter++;
    }
@@ -133,7 +137,7 @@
     result.innerHTML = "its a draw";
   }
 }
-    }
+  }
 }, false);
 }
         

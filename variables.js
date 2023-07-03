@@ -6,7 +6,7 @@ let again = document.getElementById('again');
 again.addEventListener('click', function(){
     resultBox.style.display = "none";
     for(let i = 0;i<all.length;i++){
-        all[i].style.backgroundColor = "blanchedalmond";
+        all[i].style.backgroundColor = "#F5FAFD";
         all[i].innerHTML = "";
     }
      turn = "X";
